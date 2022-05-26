@@ -1,8 +1,11 @@
 package hello.core2.member;
 
+/**
+ *  도메인 멤버
+ */
 public class Member {
     private Long id;
-    private String name; // test
+    private String name;
     private Grade grade;
 
     public Member(Long id, String name, Grade grade) {
