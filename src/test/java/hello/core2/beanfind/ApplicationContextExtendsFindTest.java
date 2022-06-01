@@ -38,5 +38,6 @@ public class ApplicationContextExtendsFindTest {
         public DiscountPolicy fixedDiscountPolicy(){
             return new FixDiscountPolicy();
         }
+
     }
 }
