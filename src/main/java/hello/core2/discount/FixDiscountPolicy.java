@@ -2,6 +2,7 @@ package hello.core2.discount;
 
 import hello.core2.member.Grade;
 import hello.core2.member.Member;
+import org.springframework.stereotype.Component;
 
 /**
  *  정액 할인 구현체 클래스
