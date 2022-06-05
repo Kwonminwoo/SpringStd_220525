@@ -1,5 +1,6 @@
 package hello.core2.member;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component // 컴포넌트스캔을 위해 컴포넌트로 설정
+@RequiredArgsConstructor  // final이 붙은 필수 필드를 이용한 생성자를 만들어 줌
 public class MemberServiceImpl implements MemberService{
     //private final MemberRepository memberRepository = new MemoryMemberRepository();// 추상화에도 의존, 구현체에도 의존 DIP를 위반하는 코드
 
@@ -16,10 +18,10 @@ public class MemberServiceImpl implements MemberService{
     //@Autowired private MemberRepository memberRepository; // 필드 의존관계 주입
 
 
-    @Autowired // 의존관계주입을 자동으로 해주게 함. memberRepository를 컨테이너에서 타입으로 찾아 주입시켜줌
-    public MemberServiceImpl(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+//    @Autowired // 의존관계주입을 자동으로 해주게 함. MemberRepository를 컨테이너에서 타입으로 찾아 주입시켜줌
+//    public MemberServiceImpl(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+//    } // 롬복으로 생성자를 자동 생성하여 코드가 필요없음
 
 //    @Autowired  // setter주입 (수정자 주입) 의존관계 주입이 된다. 필드가 fianl로 지정되어 있으면 오류
 //    public void setMemberRepository(MemberRepository memberRepository){
